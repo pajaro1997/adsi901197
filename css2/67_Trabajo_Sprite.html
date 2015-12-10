@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sprite</title>
+	<style>
+		main{
+			width: 600px;
+			margin: 50px auto;
+			border: 10px solid #3d5b6c;	
+			height: 300px;		
+		}
+		h1{
+			background-color: #3d5b6c;
+			color: #fff;
+			font: 2em Arial;
+			margin: 0px;
+			padding: 4px 0px;
+			text-align: center;
+		}
+		section#sprite{
+			border: 1px solid #ddd;
+			width: 80px;
+			height: 149px;
+			margin: 40px auto;
+			background-image: url(imgs/sprite1.png);
+		}
+		.sprite1{ background-position: 0px 0px;}
+		.sprite2{ background-position: -85px 0px;}
+		.sprite3{ background-position: -170px 0px;}
+		.sprite4{ background-position: -250px 0px;}
+
+		.sprite5{ background-position: -330px 0px;}
+		.sprite6{ background-position: -415px 0px;}
+		.sprite7{ background-position: -495px 0px;}
+		
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Sprite</h1>
+		<section id="sprite" class="sprite7"></section>
+	</main>	
+	<script>
+		var sprite = document.getElementById('sprite');
+		var num = 1;
+		setInterval(function() {
+			if (num > 6) {
+				sprite.classList.remove('sprite7');
+				sprite.classList.add('sprite1');
+				num =1;
+			}else {
+				sprite.classList.remove('sprite'+num);
+				++num;
+				sprite.classList.add('sprite'+num)
+			}
+		},150);
+	</script>
+</body>
+</html>
