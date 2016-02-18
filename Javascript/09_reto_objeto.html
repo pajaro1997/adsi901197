@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto (Objetos)</title>
+	<style>
+		body{
+			background-color: #000;
+			font: 16px tahoma;
+		}
+		section.contenedor{
+			border: 10px solid #0723F9;
+			box-shadow: 0px 4px 10px ##0723F9;
+			background-color: #000;
+			margin: 0px auto; 
+			padding: 20px;
+			width: 1160px;
+		}
+		section.contenedor h1{
+			color: #0723F9;
+			text-align: center;
+		}
+		section.contenedor hr{
+			border: 2px solid #0723F9;
+		}
+		nav.opciones {
+			margin: 20px auto;
+			width: 200px;
+		}
+
+		button{
+			border: none;;
+			background-color: #0723F9;
+			color: #fff;
+			display: block;
+			padding: 10px;
+			margin-bottom: 4px;
+			width: 100%;
+			-webkit-transition: all 0.5s;
+		}
+		button:hover{
+			cursor: pointer;
+			-webkit-transform: scale(1.1);
+		}
+		img{
+			margin: 20px 0px;
+			-webkit-transform: rotateY(180deg);
+			width: 200px;
+			position: relative;
+		}
+		.iniciar{
+			-webkit-animation: 0.2s animIniciar infinite;
+		}
+		@-webkit-keyframes animIniciar {
+			0%, 100% {-webkit-transform: rotateY(180deg) translateY(0px);}
+			50%		 {-webkit-transform: rotateY(180deg) translateY(5px);}
+		}
+	</style>
+</head>
+<body>
+	<section class="contenedor">
+		<h1>Reto(Objetos)</h1>
+		<hr>
+		<img id="vhcl" src="imgs/2.png">
+		<br>
+		<nav class="opciones">
+			<button id="btn-iniciar">Iniciar</button>
+			<button id="btn-apagar">Apagar</button>
+			<button id="btn-avanzar">Avanzar</button>
+			<button id="btn-detener">Detener</button>
+			<button id="btn-info">Mostrar Datos</button>
+		</nav>
+	</section>
+	
+
+	<script>
+	var vhcl       = document.getElementById('vhcl');
+	var btnIniciar = document.getElementById('btn-iniciar');
+	var btnApagar  = document.getElementById('btn-apagar');
+	var btnAvanzar = document.getElementById('btn-avanzar');
+	var btnDetener = document.getElementById('btn-detener');
+	var btnInfo    = document.getElementById('btn-info');
+	var sint       = undefined;
+	var cont       = 0;
+	var logi       = false;
+
+	var vehiculo = {
+		marca: 'GT 500',
+		referencia: 'Gran Torino',
+		modelo: 1997,
+		color: 'Gris',
+		cilindraje: 1000,
+
+		iniciar: function(){
+			logi = true;
+			vhcl.classList.add('iniciar');
+		},
+
+		avanzar: function(){
+			if (logi == true)
+			{
+			sint = setInterval(function(){
+				cont += 10;
+				if(cont > 980){
+					cont = 0;
+				}
+				vhcl.style.left = cont+ 'px';
+			},20);
+		} else {
+			alert("Primero debe iniciar el vehiculo....")
+		}
+		},
+
+		detener: function(){;
+			clearInterval(sint)
+		},
+		apagar: function(){
+			logi = false;
+			vhcl.classList.remove('iniciar');
+		},
+
+		info: function() {
+			alert("marca: "+this.marca+
+				"\nReferencia: "+this.referencia+
+				"\nModelo: "+this.modelo+
+				"\nColor: "+this.color+
+				"\nCilindraje: "+this.cilindraje);
+		}
+	};
+	
+
+	btnIniciar.onclick = function(){
+		vehiculo.iniciar();
+	}
+
+	btnApagar.onclick = function(){
+		vehiculo.apagar();
+		vehiculo.detener();
+	}
+
+	btnAvanzar.onclick = function(){
+		vehiculo.avanzar();
+	}
+
+	btnDetener.onclick = function(){
+		vehiculo.detener();
+	}
+
+	btnInfo.onclick = function(){
+		vehiculo.info();
+	}
+	</script>
+</body>
+</html>

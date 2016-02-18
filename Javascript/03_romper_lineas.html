@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Como romper linesas de texto</title>
+</head>
+<body>
+	<h1>Como romper linesas de texto</h1>
+	<hr>
+	<p id="parrafo"></p>
+	
+	<script>
+		var parrafo1 = "javascript es un lenguaje de programacion \
+					orientado a la web tambien es reconocido \
+					como el lenguaje de rpogramacion mas usado \
+					en la actualidad. ";
+
+		var parrafo2 = "javascript es un lenguaje de programacion \norientado a la web tambien es reconocido \ncomo el lenguaje de rpogramacion mas usado \nen la actualidad. ";
+		document.getElementById('parrafo').innerHTML = parrafo1;
+		alert(parrafo2);
+	</script>
+</body>
+</html>

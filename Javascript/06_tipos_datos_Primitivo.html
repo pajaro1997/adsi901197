@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tipos de Datos(Primitivos)</title>
+</head>
+<body>
+	<h1>Tipos de Datos(Primitivos)</h1>
+	<hr>
+
+	<script>
+	//Tipo Indefinido
+	var sentimientos = undefined;
+	document.write("Indefinido "+sentimientos+"<br><br>")
+
+	//tipo Nulo
+	var copasMundoColombia = null;
+	document.write("Nulo "+copasMundoColombia+"<br><br>")
+
+	//Tipo Numerico
+	var numero1 = 5; // Sin decimales
+	document.write("Entero "+numero1+"<br><br>")
+
+	var numero2 = 3.22; //Con decimales
+	document.write("Decimal "+numero2+"<br><br>")
+
+	var numero3 = 235e5; // 23500000
+	document.write("Notacion cientifica e5 "+numero3+"<br><br>")
+
+	var numero4 = 235e-5; // 0.00235
+	document.write("Notacion cientifica e-5 "+numero4+"<br><br>")
+
+	//Tipo Cadena
+	var cadena1 = "Hola mundo";
+	document.write("Comillas dobles "+cadena1+"<br><br>")
+
+	var cadena2 = 'Hola ADSI901197';
+	document.write("Comillas simples "+cadena2+"<br><br>")
+
+	//Tipo Booleano
+	var bool1 = true;
+	document.write("Verdadero"+bool1+"<br><br>")
+	var bool2 = false;
+	document.write("Falso"+bool2+"<br><br>")
+
+	//Tipo Arreglo
+	var frutas = new Array();
+	frutas[0] = "Manzana"; //Indice manual
+	frutas[1] = "Pera";
+	frutas[2] = "Guayaba";
+	document.write("Vector: "+frutas+"<br>")
+	//Indices Automaticos
+	var carros = new Array("Renault", "Volkswagen", "Fiat");
+	document.write("Vector: "+carros+"<br>")
+	</script>
+
+</body>
+</html>
